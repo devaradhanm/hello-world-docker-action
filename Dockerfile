@@ -1,8 +1,8 @@
 # Container image that runs your code
 FROM cypress/base:12.13.0
 
-RUN npm install -g yarn@1.17.3
-
+npm install -g http-server
+npm install -g accessibility-insights-scan
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
