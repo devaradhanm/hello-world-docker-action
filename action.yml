@@ -2,15 +2,22 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  site-dir:  # id of input
+    description: 'Folder containing sites with index.html'
     required: true
-    default: 'World'
+    default: ${{ github.workspace }}/_site
+  report-dir:  # id of input
+    description: 'Output folder containing accessibility report'
+    required: true
+    default: ${{ github.workspace }}/_report
 outputs:
   time: # id of output
-    description: 'The time we greeted you'
+    description: 'time completed'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - -v
+    - ${{ inputs.site-dir }}:/workspace/_site
+    - -v
+    - ${{ inputs.report-dir }}:/workspace/_report
