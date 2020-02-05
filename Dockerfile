@@ -18,6 +18,7 @@ RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
     && chown -R pptruser:pptruser /usr/local/lib/node_modules \
     && chown -R pptruser:pptruser /home/pptruser	
 
+RUN echo "Enabling user namespace cloning https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md"
 RUN sysctl -w kernel.unprivileged_userns_clone=1
 
 # Run everything after as non-privileged user.	
