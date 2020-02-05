@@ -18,9 +18,9 @@ RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
     && chown -R pptruser:pptruser /usr/local/lib/node_modules \
     && chown -R pptruser:pptruser /home/pptruser	
 
+RUN sysctl -w kernel.unprivileged_userns_clone=1
+
 # Run everything after as non-privileged user.	
 USER pptruser
-
-RUN sysctl -w kernel.unprivileged_userns_clone=1
 
 ENTRYPOINT ["/bin/sh", "-c", "xvfb-run --server-args=\"-screen 0 1024x768x24\" /entrypoint.sh", ""]
