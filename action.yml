@@ -2,11 +2,11 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  site-dir:  # id of input
+  site-dir-under-workspace:  # id of input
     description: 'Folder containing sites with index.html'
     required: true
     default: ${{ github.workspace }}/_site
-  report-dir:  # id of input
+  report-dir-under-workspace:  # id of input
     description: 'Output folder containing accessibility report'
     required: true
     default: ${{ github.workspace }}/_report
@@ -17,7 +17,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - -v
-    - ${{ inputs.site-dir }}:/workspace/_site
-    - -v
-    - ${{ inputs.report-dir }}:/workspace/_report
+    - ${{ inputs.site-dir-under-workspace }}
+    - ${{ inputs.report-dir-under-workspace }}
