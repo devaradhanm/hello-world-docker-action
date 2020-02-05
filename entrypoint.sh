@@ -3,6 +3,9 @@
 echo "Hello $1"
 time=$(date)
 
+echo "files under /workspace/_site"
+ls /workspace/_site
+
 echo "Starting http server..."
 http-server /workspace/_site -p 9123 &
 
