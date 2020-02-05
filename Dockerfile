@@ -11,5 +11,13 @@ RUN chmod +x /entrypoint.sh
 
 RUN echo "building docker image"
 
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["/entrypoint.sh"]
+# Add user so we don't need --no-sandbox.	
+# same layer as npm install to keep re-chowned files from using up several hundred MBs more space	
+RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \	
+    && mkdir -p /home/pptruser/Downloads \	
+    && chown -R pptruser:pptruser /home/pptruser	
+
+# Run everything after as non-privileged user.	
+USER pptruser
+
+ENTRYPOINT ["/bin/sh", "-c", "xvfb-run --server-args=\"-screen 0 1024x768x24\" /entrypoint.sh", ""]
