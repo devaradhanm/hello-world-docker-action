@@ -5,11 +5,11 @@ inputs:
   site-dir-under-workspace:  # id of input
     description: 'Folder containing sites with index.html'
     required: true
-    default: ${{ github.workspace }}/_site
+    default: /
   report-dir-under-workspace:  # id of input
     description: 'Output folder containing accessibility report'
     required: true
-    default: ${{ github.workspace }}/_report
+    default: _report
 outputs:
   time: # id of output
     description: 'time completed'
