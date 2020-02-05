@@ -3,6 +3,9 @@
 echo "Hello $1"
 time=$(date)
 
+echo "files under /github/workspace"
+ls /github/workspace
+
 echo "files under /workspace/_site"
 ls /workspace/_site
 
