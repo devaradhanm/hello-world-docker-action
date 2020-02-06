@@ -41,9 +41,9 @@ RUN npm install accessibility-insights-scan
 RUN chown -R pptruser:pptruser /node_modules
 
 # Run everything after as non-privileged user.
-#USER pptruser
+USER pptruser
 
 RUN echo "who am i?"
 RUN whoami
 
-ENTRYPOINT ["/entrypoint.sh"]
+# ENTRYPOINT ["/entrypoint.sh"]
