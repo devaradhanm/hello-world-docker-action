@@ -21,6 +21,9 @@ RUN rm -rf /var/lib/apt/lists/*
 RUN wget https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64.deb
 RUN dpkg -i dumb-init_*.deb
 
+#for web project
+RUN apt-get update && apt-get -y install python --no-install-recommends
+
 #for xvfb-run dependencies
 #RUN apt-get update && \
 #    apt-get -y install xvfb xauth --no-install-recommends
