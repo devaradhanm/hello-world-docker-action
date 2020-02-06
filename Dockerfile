@@ -25,15 +25,15 @@ RUN dpkg -i dumb-init_*.deb
 #RUN apt-get update && \
 #    apt-get -y install xvfb xauth --no-install-recommends
 
-#RUN mkdir /github
+RUN mkdir /github
 # Add user so we don't need --no-sandbox.
 RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
     && mkdir -p /home/pptruser/Downloads \
     && chown -R pptruser:pptruser /home/pptruser \
     && chown -R pptruser:pptruser /usr/bin \
     && chown -R pptruser:pptruser /bin \
-    && chown -R pptruser:pptruser /etc
-#    && chown -R pptruser:pptruser /github
+    && chown -R pptruser:pptruser /etc \
+    && chown pptruser:pptruser /github
 
 # RUN npm install http-server
 # RUN npm install accessibility-insights-scan
@@ -41,7 +41,7 @@ RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
 # RUN chown -R pptruser:pptruser /node_modules
 
 # Run everything after as non-privileged user.
-#USER pptruser
+USER pptruser
 
 RUN echo "who am i?"
 RUN whoami
