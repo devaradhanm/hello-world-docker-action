@@ -44,4 +44,4 @@ RUN echo "who am i?"
 RUN whoami
 
 ENTRYPOINT ["dumb-init", "--"]
-CMD ["/bin/sh", "-c", "xvfb-run --server-args=\"-screen 0 1024x768x24\" /entrypoint.sh"]
+CMD ["/entrypoint.sh"]
