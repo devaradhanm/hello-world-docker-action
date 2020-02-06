@@ -1,5 +1,8 @@
 #!/bin/sh -l
 
+chown -R pptruser:pptruser /github
+su - pptruser
+
 time=$(date)
 
 echo "who am i?"
