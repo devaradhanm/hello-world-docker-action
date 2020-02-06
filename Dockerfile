@@ -44,5 +44,4 @@ RUN chown -R pptruser:pptruser /node_modules
 RUN echo "who am i?"
 RUN whoami
 
-ENTRYPOINT ["dumb-init", "--"]
-CMD ["/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
