@@ -51,4 +51,4 @@ RUN echo "who am i?"
 RUN whoami
 
 #ENTRYPOINT ["/bin/sh", "/entrypoint.sh"]
-ENTRYPOINT ["/bin/sh" "-c" "xvfb-run --server-args=\"-screen 0 1024x768x24\ /entrypoint.sh"]
+ENTRYPOINT ["/bin/sh" "-c" "xvfb-run --server-args=\"-screen 0 1024x768x24\" /entrypoint.sh"]
