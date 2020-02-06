@@ -26,8 +26,8 @@ RUN dpkg -i dumb-init_*.deb
 RUN apt-get update && apt-get -y install python --no-install-recommends
 
 #for xvfb-run dependencies
-#RUN apt-get update && \
-#    apt-get -y install xvfb xauth --no-install-recommends
+RUN apt-get update && \
+    apt-get -y install xvfb xauth --no-install-recommends
 
 RUN mkdir /github
 # Add user so we don't need --no-sandbox.
@@ -50,5 +50,5 @@ RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
 RUN echo "who am i?"
 RUN whoami
 
-ENTRYPOINT ["/bin/sh", "/entrypoint.sh"]
-# #ENTRYPOINT ["/bin/sh" "-c" "chown -R pptruser:pptruser && su -l pptruser -c \"$@\""]
+#ENTRYPOINT ["/bin/sh", "/entrypoint.sh"]
+ENTRYPOINT ["/bin/sh" "-c" "xvfb-run --server-args=\"-screen 0 1024x768x24\ /entrypoint.sh"]
