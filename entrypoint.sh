@@ -7,7 +7,7 @@ chmod -R 777 /github
 echo "print permissions info"
 ls -l /github/workspace
 
-exec runuser -u pptruser "$@"
+exec runuser -u root "$@"
 
 # echo "granting permissions to pptuser"
 # chown -R pptruser:pptruser /github
