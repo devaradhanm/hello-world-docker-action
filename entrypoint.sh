@@ -1,6 +1,8 @@
 #!/bin/sh -l
 
-chown -R pptruser:pptruser /github
+echo "Changing permissions"
+# chown -R pptruser:pptruser /github
+chmod -R 777 /github
 
 echo "print permissions info"
 ls -l /github/workspace
