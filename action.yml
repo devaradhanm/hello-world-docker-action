@@ -10,9 +10,6 @@ inputs:
     description: 'Output folder containing accessibility report'
     required: true
     default: _report
-  args:  # id of input
-    description: 'command to run'
-    required: true
 outputs:
   time: # id of output
     description: 'time completed'
@@ -20,4 +17,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.args }}
+   - ${{ inputs.site-dir-under-workspace }}	
+   - ${{ inputs.report-dir-under-workspace }}
