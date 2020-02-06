@@ -22,8 +22,8 @@ RUN wget https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.
 RUN dpkg -i dumb-init_*.deb
 
 #for xvfb-run dependencies
-RUN apt-get update && \
-    apt-get -y install xvfb xauth --no-install-recommends
+#RUN apt-get update && \
+#    apt-get -y install xvfb xauth --no-install-recommends
 
 #RUN mkdir /github
 # Add user so we don't need --no-sandbox.
