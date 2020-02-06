@@ -2,8 +2,8 @@
 
 time=$(date)
 
-RUN echo "who am i?"
-RUN whoami
+echo "who am i?"
+whoami
 
 echo "files under /github/workspace/$1"
 ls /github/workspace/$1
