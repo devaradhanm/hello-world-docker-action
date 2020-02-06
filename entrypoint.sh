@@ -1,7 +1,8 @@
 #!/bin/sh -l
 
-#chown -R pptruser:pptruser /github
-#su - pptruser
+chown -R pptruser:pptruser /github
+echo "changing user..."
+su - pptruser
 
 time=$(date)
 
