@@ -1,8 +1,9 @@
 #!/bin/sh -l
 
+echo "granting permissions to pptuser"
 chown -R pptruser:pptruser /github
-#echo "changing user..."
-#su -l pptruser
+echo "changing user..."
+su -l pptruser
 
 time=$(date)
 
