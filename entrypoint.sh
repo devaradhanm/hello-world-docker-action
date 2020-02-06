@@ -2,7 +2,7 @@
 
 chown -R pptruser:pptruser /github
 echo "changing user..."
-su - pptruser
+su -l pptruser
 
 time=$(date)
 
