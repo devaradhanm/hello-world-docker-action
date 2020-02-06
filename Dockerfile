@@ -46,4 +46,4 @@ USER pptruser
 RUN echo "who am i?"
 RUN whoami
 
-# ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/bin/sh" "-c" "chown -R pptruser:pptruser && su -l pptruser -c \"$@\""]
