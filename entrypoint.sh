@@ -6,7 +6,7 @@ echo "changing user..."
 su -l pptruser
 
 time=$(date)
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
+#ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 
 echo "who am i?"
 whoami
