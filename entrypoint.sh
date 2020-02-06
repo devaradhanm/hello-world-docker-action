@@ -18,7 +18,7 @@ ls /github/workspace/$1
 
 echo "Starting Scan for bing..."
 #node /node_modules/accessibility-insights-scan/dist/ai-scan.js --url http://127.0.0.1:9123 --output /github/workspace/$2
-su -u pptruser node /node_modules/accessibility-insights-scan/dist/ai-scan.js --url https://www.bing.com --output /github/workspace/$2
+pptruser node /node_modules/accessibility-insights-scan/dist/ai-scan.js --url https://www.bing.com --output /github/workspace/$2
 
 echo "Scan completed!"
 echo ::set-output name=time::$time
