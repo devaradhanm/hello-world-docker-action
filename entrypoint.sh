@@ -1,6 +1,8 @@
 #!/bin/sh -l
 
-chown -R pptruser:pptruser /github
+#chown -R pptruser:pptruser /github
+chmod -R pptruser=root /github
+
 exec runuser -u pptruser "$@"
 
 # echo "granting permissions to pptuser"
