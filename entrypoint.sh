@@ -1,7 +1,6 @@
 #!/bin/sh -l
 
 #chown -R pptruser:pptruser /github
-chmod -R pptruser=root /github
 
 echo "print permissions info"
 ls -l /github/workspace
