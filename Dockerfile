@@ -31,6 +31,7 @@ RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
     && chown -R pptruser:pptruser /home/pptruser \
     && chown -R pptruser:pptruser /usr/bin \
     && chown -R pptruser:pptruser /bin
+    && chown -R pptruser:pptruser /etc
 
 RUN npm install http-server
 RUN npm install accessibility-insights-scan
@@ -38,7 +39,7 @@ RUN npm install accessibility-insights-scan
 RUN chown -R pptruser:pptruser /node_modules
 
 # Run everything after as non-privileged user.
-USER pptruser
+#USER pptruser
 
 RUN echo "who am i?"
 RUN whoami
