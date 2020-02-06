@@ -31,7 +31,8 @@ RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
     && chown -R pptruser:pptruser /home/pptruser \
     && chown -R pptruser:pptruser /usr/bin \
     && chown -R pptruser:pptruser /bin \
-    && chown -R pptruser:pptruser /etc
+    && chown -R pptruser:pptruser /etc \
+    && chown -R pptruser:pptruser /github
 
 RUN npm install http-server
 RUN npm install accessibility-insights-scan
