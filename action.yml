@@ -1,5 +1,5 @@
 # action.yml
-name: 'Hello World'
+name: 'sample-extension-1'
 description: 'Greet someone and record the time'
 inputs:
   site-dir-under-workspace:  # id of input
